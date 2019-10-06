@@ -10,7 +10,7 @@ searchQuery = "phones" #input("What are you looking to buy? Use this search like
 # Web session to store info and cookies
 session = requests.Session()
 idcookie = ""
-item = search(searchQuery, tld="com", lang="en", num=1, start=0, stop=1, pause=2.0)
+item = search(searchQuery, tld="com", lang="en", num=1, start=0, stop=1, pause=0.0)
 
 for i in item:
   session.get(i)
@@ -70,9 +70,7 @@ for i in formattedLinks:
       temp = ""
       break
 
-print(linksList[0])
-
-for i in range(len(linksList)):
+for i in range(len(linksList) - 1):
   dictWebsiteToPrice[linksList[i].strip('"')] = priceList[i].strip("$")
   print("Item {}:\n- www.walmart.com/{}\n- Price = {}".format(i + 1, linksList[i].strip('"'), priceList[i]))
 
