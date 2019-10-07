@@ -41,7 +41,7 @@ priceList = []
 formattedLinks = []
 linksList = []
 
-dictWebsiteToPrice = {}
+webUrlPrice = []
 
 for link in links:
   element = link.select("a[href]")
@@ -70,8 +70,14 @@ for i in formattedLinks:
       temp = ""
       break
 
-for i in range(len(linksList) - 1):
-  dictWebsiteToPrice[linksList[i].strip('"')] = priceList[i].strip("$")
-  print("Item {}:\n- www.walmart.com/{}\n- Price = {}".format(i + 1, linksList[i].strip('"'), priceList[i]))
+#for i in range(len(linksList) - 1):
+  #webUrlPrice.append(priceList[i] + " : " + linksList[i].strip('"'))
+  #print("Item {}:\n- www.walmart.com/{}\n- Price = {}".format(i + 1, linksList[i].strip('"'), priceList[i]))
 
-#print(dictWebsiteToPrice)
+for i in range(len(linksList) - 1):
+  webUrlPrice.append([priceList[i], linksList[i].strip('"')])
+#print(webUrlPrice)
+
+for i in range(len(webUrlPrice) - 1):
+  for j in webUrlPrice[i]:
+    print(j)
