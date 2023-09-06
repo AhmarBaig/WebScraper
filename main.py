@@ -40,6 +40,7 @@ priceString = ""
 priceList = []
 formattedLinks = []
 linksList = []
+sortedList = []
 
 webUrlPrice = []
 
@@ -78,6 +79,10 @@ for i in range(len(linksList) - 1):
   webUrlPrice.append([priceList[i], linksList[i].strip('"')])
 #print(webUrlPrice)
 
-for i in range(len(webUrlPrice) - 1):
-  for j in webUrlPrice[i]:
-    print(j)
+temp = ""
+
+"""
+while counter < len(webUrlPrice) - 1:
+  if webUrlPrice[counter][0] > webUrlPrice[counter + 1][0]:
+    temp = webUrlPrice[counter + 1][0]
+"""   
